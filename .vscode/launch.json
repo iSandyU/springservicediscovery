@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "com.sandeepmane.springeurekaserver.DemoApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-DemoApplication<springstudentservice>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
