@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<springstudentservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.sandeepmane.springstudentservice.DemoApplication",
+            "projectName": "springstudentservice",
+            "args": ""
+        }
+    ]
+}
