@@ -1,18 +1,13 @@
 package com.sandeepmane.calculateageservice.service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import com.sandeepmane.calculateageservice.model.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,6 +18,7 @@ public class CalculateAgeService {
     RestTemplate restTemplate;
 
     @Bean
+    @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
@@ -30,7 +26,7 @@ public class CalculateAgeService {
     public int calculateAge(String name)
     {
         //can't return List directly
-        Student[] students = restTemplate.getForObject("http://localhost:8085/students", Student[].class);
+        Student[] students = restTemplate.getForObject("http://studentservice/students", Student[].class);
         
         List<Student> studentList = Arrays.asList(students);
 
